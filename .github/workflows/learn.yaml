@@ -11,5 +11,7 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
-      - run: echo sec is $TRIP_PASS
+      - env:
+          PASS: ${{ secrets.TRIP_PASS }}
+        run: echo sec is $PASS
 
